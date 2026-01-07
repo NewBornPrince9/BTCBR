@@ -3,80 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin BR (BTCBR) - Official Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Bitcoin BR (BTCBR) - Official</title>
+    <style>
+        /* CSS LANGSUNG DI DALAM HTML AGAR PASTI BERHASIL */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .nav-logo {
+            width: 80px;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #f39c12;
+            margin-top: 10px;
+        }
+        .hero-banner {
+            width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+            border: 1px solid #f39c12;
+        }
+        .contract-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            display: block;
+            margin: 30px 0;
+        }
+        code {
+            color: #f39c12;
+            font-size: 1rem;
+            word-break: break-all;
+        }
+        .copy-btn {
+            background: #f39c12;
+            color: black;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        .about-section {
+            background: #141414;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo-area">
-                <img src="Logo BTCBR.png" alt="BTCBR Logo" class="nav-logo">
-                <span class="logo-text">BTCBR</span>
-            </div>
-            <ul>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#tokenomics">Tokenomics</a></li>
-                <li><a href="https://pancakeswap.finance" target="_blank" class="btn-buy">Beli Sekarang</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
     <div class="container">
+        <img src="Logo BTCBR.png" alt="BTCBR Logo" class="nav-logo">
+        
+        <h1>Bitcoin BR (BTCBR)</h1>
+        <p>Masa Depan Keuangan Terdesentralisasi</p>
+
         <img src="banner-btcbr.jpg" alt="BTCBR Community" class="hero-banner">
-        
-        <h1>Bitcoin BR <span class="highlight">(BTCBR)</span></h1>
-        <p>Masa Depan Keuangan Desentralisasi untuk Semua Orang.</p>
-        
-        <div class="contract-container">
-            <p class="label">Alamat Kontrak Resmi:</p>
-            <div class="contract-box">
-                <code id="contract-addr">0xef5B009Bd9402aB7fb52C87Cc9B0b5202636EE8b</code>
-                <button onclick="copyContract()" id="copy-btn">Salin</button>
-            </div>
+
+        <div class="contract-box">
+            <p style="margin-bottom: 10px; color: #888;">Official Contract Address:</p>
+            <code id="addr">0xef5B009Bd9402aB7fb52C87Cc9B0b5202636EE8b</code><br>
+            <button class="copy-btn" onclick="copyText()">Salin Alamat Kontrak</button>
         </div>
+
+        <div class="about-section">
+            <h2>Tentang Kami</h2>
+            <p>BTCBR adalah token inovatif di jaringan BSC yang mengutamakan kecepatan dan transparansi bagi komunitas global.</p>
+        </div>
+
+        <footer style="margin-top: 50px; color: #555;">
+            <p>&copy; 2026 BTCBR Official. Created by NewBornPrince9</p>
+        </footer>
     </div>
-</section>
-        <div class="container">
-            <img src="Logo BTCBR.png" alt="BTCBR" class="hero-logo">
-            <h1>Bitcoin BR <span class="highlight">(BTCBR)</span></h1>
-            <p>Masa Depan Keuangan Desentralisasi di Jaringan Smart Chain.</p>
-            
-            <div class="contract-container">
-                <p class="label">Alamat Kontrak Resmi:</p>
-                <div class="contract-box">
-                    <code id="contract-addr">0xef5B009Bd9402aB7fb52C87Cc9B0b5202636EE8b</code>
-                    <button onclick="copyContract()" id="copy-btn">Salin</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="details">
-        <div class="container">
-            <h2>Tentang BTCBR</h2>
-            <p>Bitcoin BR (BTCBR) adalah token komunitas yang dirancang untuk memberikan kecepatan transaksi maksimal dengan biaya minimal. Kami fokus pada keamanan dan transparansi bagi seluruh pemegang aset.</p>
-        </div>
-    </section>
-
-    <footer class="container">
-        <p>&copy; 2026 BTCBR Team. Developed by NewBornPrince9.</p>
-    </footer>
 
     <script>
-        function copyContract() {
-            const addr = document.getElementById('contract-addr').innerText;
-            navigator.clipboard.writeText(addr);
-            
-            const btn = document.getElementById('copy-btn');
-            btn.innerText = 'Tersalin!';
-            btn.style.backgroundColor = '#2ecc71';
-            
-            setTimeout(() => {
-                btn.innerText = 'Salin';
-                btn.style.backgroundColor = '#f39c12';
-            }, 2000);
+        function copyText() {
+            var text = document.getElementById("addr").innerText;
+            navigator.clipboard.writeText(text);
+            alert("Alamat kontrak berhasil disalin!");
         }
     </script>
 </body>
