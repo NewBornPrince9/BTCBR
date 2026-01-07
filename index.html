@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin BR (BTCBR) - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo-area">
+                <img src="Logo BTCBR.png" alt="BTCBR Logo" class="nav-logo">
+                <span class="logo-text">BTCBR</span>
+            </div>
+            <ul>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="https://pancakeswap.finance" target="_blank" class="btn-buy">Beli Sekarang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="Logo BTCBR.png" alt="BTCBR" class="hero-logo">
+            <h1>Bitcoin BR <span class="highlight">(BTCBR)</span></h1>
+            <p>Masa Depan Keuangan Desentralisasi di Jaringan Smart Chain.</p>
+            
+            <div class="contract-container">
+                <p class="label">Alamat Kontrak Resmi:</p>
+                <div class="contract-box">
+                    <code id="contract-addr">0xef5B009Bd9402aB7fb52C87Cc9B0b5202636EE8b</code>
+                    <button onclick="copyContract()" id="copy-btn">Salin</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="details">
+        <div class="container">
+            <h2>Tentang BTCBR</h2>
+            <p>Bitcoin BR (BTCBR) adalah token komunitas yang dirancang untuk memberikan kecepatan transaksi maksimal dengan biaya minimal. Kami fokus pada keamanan dan transparansi bagi seluruh pemegang aset.</p>
+        </div>
+    </section>
+
+    <footer class="container">
+        <p>&copy; 2026 BTCBR Team. Developed by NewBornPrince9.</p>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const addr = document.getElementById('contract-addr').innerText;
+            navigator.clipboard.writeText(addr);
+            
+            const btn = document.getElementById('copy-btn');
+            btn.innerText = 'Tersalin!';
+            btn.style.backgroundColor = '#2ecc71';
+            
+            setTimeout(() => {
+                btn.innerText = 'Salin';
+                btn.style.backgroundColor = '#f39c12';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
