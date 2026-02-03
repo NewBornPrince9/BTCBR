@@ -141,6 +141,35 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 </script>
+<script>
+async function addToken() {
+    const tokenAddress = '0xef5b009bd9402ab7fb52c87cc9b0b5202636ee8b';
+    const tokenSymbol = 'BTCBR';
+    const tokenDecimals = 18;
+    const tokenImage = 'https://raw.githubusercontent.com/NewBornPrince9/BTCBR/main/Logo%20BTCBR.png';
 
+    try {
+        const wasAdded = await ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+                type: 'ERC20',
+                options: {
+                    address: tokenAddress,
+                    symbol: tokenSymbol,
+                    decimals: tokenDecimals,
+                    image: tokenImage,
+                },
+            },
+        });
+
+        if (wasAdded) {
+            alert('BTCBR berhasil ditambahkan ke MetaMask!');
+        }
+    } catch (error) {
+        console.log(error);
+        alert('Gagal menambahkan token. Pastikan MetaMask Anda sudah terhubung.');
+    }
+}
+</script>
 </body>
 </html>
