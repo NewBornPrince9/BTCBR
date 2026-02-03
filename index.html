@@ -23,11 +23,38 @@
 
         .container { width: 90%; max-width: 1100px; margin: auto; padding: 20px; }
 
+        /* Google Translate & Clock Header */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background: #161a1e;
+            border-bottom: 1px solid #30363d;
+            flex-wrap: wrap;
+        }
+
+        #digital-clock {
+            font-weight: bold;
+            color: var(--primary-gold);
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+
         /* Header & Hero */
         header { padding: 40px 0; text-align: center; }
         .logo { width: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(243, 186, 47, 0.3)); }
         h1 { color: var(--primary-gold); font-size: 2.5rem; margin: 10px 0; }
-        .hero-banner { width: 100%; border-radius: 20px; margin: 30px 0; border: 1px solid #30363d; }
+
+        /* Live Price Widget Container */
+        .price-widget {
+            width: 100%;
+            height: 600px;
+            border: 2px solid var(--primary-gold);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 30px 0;
+        }
 
         /* Buttons */
         .btn-group { margin: 30px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
@@ -36,71 +63,81 @@
         .btn-outline { border: 2px solid var(--primary-gold); color: var(--primary-gold); }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(243, 186, 47, 0.4); }
 
-        /* Info Sections */
-        section { padding: 60px 0; border-bottom: 1px solid #23282e; }
-        .section-title { color: var(--primary-gold); margin-bottom: 40px; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, min-minmax(300px, 1fr)); gap: 20px; }
+        section { padding: 40px 0; border-bottom: 1px solid #23282e; }
+        .section-title { color: var(--primary-gold); margin-bottom: 30px; text-align: center; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #30363d; }
-
-        /* Contract Address Box */
-        .contract-box { background: #161a1e; padding: 20px; border-radius: 10px; border: 1px dashed var(--primary-gold); word-break: break-all; margin: 20px 0; }
 
         footer { text-align: center; padding: 40px; color: var(--text-gray); font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
+<div class="top-bar">
+    <div id="digital-clock">00:00:00</div>
+    <div id="google_translate_element"></div>
+</div>
+
 <header class="container">
     <img src="Logo BTCBR.png" alt="BTCBR Logo" class="logo">
     <h1>Bitcoin BR (BTCBR)</h1>
-    <p>Masa Depan Keuangan Terdesentralisasi di Binance Smart Chain</p>
+    <p>The Future of Decentralized Finance on Binance Smart Chain</p>
     
-    <div class="contract-box">
-        <strong>Official Contract Address:</strong><br>
-        <code>0xef5B009Bd9402aB7fb52C87Cc9B0b5202636EE8b</code>
-    </div>
-
     <div class="btn-group">
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0xef5b009bd9402ab7fb52c87cc9b0b5202636ee8b" class="btn btn-main">Beli di PancakeSwap</a>
-        <a href="Whitepaper Bitcoin BR.pdf" class="btn btn-outline">Baca Whitepaper</a>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0xef5b009bd9402ab7fb52c87cc9b0b5202636ee8b" class="btn btn-main">Buy BTCBR</a>
+        <a href="Whitepaper Bitcoin BR.pdf" class="btn btn-outline">Whitepaper</a>
     </div>
 </header>
 
 <div class="container">
-    <img src="Banner-BTCBR.jpg" alt="BTCBR Community" class="hero-banner">
-
-    <section id="about">
-        <h2 class="section-title">Tentang BTCBR</h2>
-        <div class="card">
-            <p>Bitcoin BR adalah inovasi finansial terdesentralisasi (DeFi) yang dirancang untuk memberikan kecepatan tinggi dan biaya transaksi rendah menggunakan jaringan Binance Smart Chain (BEP20). Kami berfokus pada pembangunan ekosistem yang aman bagi pemegang token jangka panjang.</p>
+    <section>
+        <h2 class="section-title">Live Market Price</h2>
+        <div class="price-widget">
+            <iframe 
+                src="https://www.xxyy.io/bsc/0x88a3182b8c2448de6712dea6f725e17ace92ad5e" 
+                style="width: 100%; height: 100%; border: none;">
+            </iframe>
         </div>
     </section>
 
-    <section id="team">
-        <h2 class="section-title">Tim Pengembang</h2>
-        <div class="grid">
-            <div class="card" style="text-align:center;">
-                <h3>NewBornPrince9</h3>
-                <p style="color: var(--primary-gold);">Lead Developer & Founder</p>
-                <p>Spesialis dalam pengembangan Smart Contract dan ekosistem Blockchain.</p>
-                <a href="https://github.com/newbornprince9" style="color:white; font-size:0.8rem;">Lihat Profil GitHub</a>
-            </div>
+    <section id="about">
+        <h2 class="section-title">About BTCBR</h2>
+        <div class="card">
+            <p>Bitcoin BR (BTCBR) is a decentralized financial innovation designed to provide high speed and low transaction costs on the Binance Smart Chain (BEP20) network. Our focus is on building a secure ecosystem for long-term token holders.</p>
         </div>
     </section>
 
     <section id="community">
-        <h2 class="section-title">Komunitas Global</h2>
+        <h2 class="section-title">Join Our Community</h2>
         <div class="btn-group">
             <a href="https://t.me/BitcoinBR_BEP20" class="btn btn-outline">Telegram</a>
-            <a href="https://x.com/BitcoinBrBEP20" class="btn btn-outline">X / Twitter</a>
+            <a href="https://x.com/BitcoinBrBEP20" class="btn btn-outline">Twitter (X)</a>
         </div>
     </section>
 </div>
 
 <footer>
     <p>&copy; 2026 BTCBR Official Team. Developed by NewBornPrince9.</p>
-    <p>Contact: <a href="bitcoinbr70@gmail.com" style="color:var(--primary-gold);">admin@btcbr.info</a></p>
+    <p>Official Support: <a href="mailto:bitcoinbr70@gmail.com" style="color:var(--primary-gold);">bitcoinbr70@gmail.com</a></p>
 </footer>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 
 </body>
 </html>
